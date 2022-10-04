@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css" />
+    <title>Online Website</title>
+    <style>
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .title {
+            font-size: x-large;
+            font-weight: 700;
+        }
+
+        .box1 {
+            border: 1px solid black;
+            background-color: black;
+            height: 30px;
+        }
+
+        ul {
+            float: left;
+            color: white;
+        }
+
+        ul li {
+            margin-top: -10px;
+            float: left;
+            position: relative;
+            left: 300%;
+            width: 100px;
+            font-size: 14px;
+            font-family: barlow condensed, sans-serif;
+            list-style-type: none;
+        }
+
+        ul li a{
+           text-decoration: none;
+           color: white;
+        }
+
+        h5 {
+            margin-top: 5px;
+            color: white;
+            margin: 7px 12px;
+            position: relative;
+            left: -18%;
+            font-family: barlow condensed, sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .subbox {
+            border: 1px solid transparent;
+            background-color: whitesmoke;
+            height: 50px;
+        }
+
+        ol {
+            float: left;
+        }
+
+        ol li {
+            float: left;
+            width: 120px;
+            position: relative;
+            left: 35%;
+            list-style-type: none;
+            font-family: barlow condensed;
+            font-size: 18px;
+        }
+
+        ol li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ol li a:hover{
+            border-bottom: 4px solid blue;
+        }
+
+        .fa-search {
+            position: absolute;
+            left: 82%;
+            top: 8%;
+            color: black;
+        }
+
+        .fa-user {
+            position: absolute;
+            left: 85%;
+            top: 8%;
+            color: black;
+        }
+
+        .fa-shopping-cart {
+            position: absolute;
+            left: 88%;
+            top: 8%;
+            color: black;
+            width: 25px;
+            height: -30px;
+            border-radius: 100px;
+        }
+
+        h2 {
+            position: relative;
+            left: -50%;
+            text-transform: uppercase;
+            font-family: barlow condensed, sans-serif;
+            margin-top: 5px;
+            font-weight: bolder;
+        }
+
+        font {
+            color: red;
+        }
+
+        .cover img {
+            background-size: cover;
+        }
+
+        .content {
+                display: flex;
+                margin: 0 7%;
+            }
+
+            .content > * {
+                flex: 1;
+            }
+
+            .content > img {
+                width: 200px;
+                height: 600px;
+            }
+
+            #orderBtn {
+                position: relative;
+                background-color: black;
+                border: none;
+                padding: 20px;
+                width: 200px;
+                text-align: center;
+                -webkit-transition-duration: 0.4s;
+                transition-duration: 0.4s;
+                text-decoration: none;
+                overflow: hidden;
+                cursor: pointer;
+                color: white;
+            }
+
+            #orderBtn:hover {
+                background: #fff;
+                box-shadow: 0px 2px 10px 5px #97b1bf;
+                color: #000;
+            }
+
+            #orderBtn:after {
+                content: "";
+                background: black;
+                display: block;
+                position: absolute;
+                padding-top: 300%;
+                padding-left: 350%;
+                margin-left: -20px !important;
+                margin-top: -120%;
+                opacity: 0;
+                transition: all 0.8s;
+            }
+
+            #orderBtn:active:after {
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+                transition: 0s;
+            }
+
+            fieldset {
+                background-color:rgb(213, 245, 189);
+                max-width:500px;
+                padding: 14px;
+            }	
+
+            legend {
+                color:#00f;
+            }
+    </style>
+  </head>
+   <body>
+    <div class="box1">
+        <ul>
+            <li><a href="">USD</a> <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+            <li><a href="">English</a> <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+            <li><a href="">My Account</a> <i class="fa fa-angle-down" aria-hidden="true"></i></li>
+        </ul>
+        <h5> Free shipping on all orders above 80$</h5>
+    </div>
+    <div class="subbox">
+        <ol>
+            <li><a href="">Home</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Contact</a></li>
+        </ol>
+
+        <div class="icon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
+            
+            <div class="background">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+            
+            <h2>Point of <font> View</font></h2>
+        </div>
+    </div>
+
+    <div class="cover">
+        <img src="Images/Image1.jpeg">
+    </div>
+
+        <p class="title">Order Details</Details></p>
+        <section class="content">
+            <form 
+            name="myForm"
+            id="shirt_cart"
+            onsubmit="return validateForm()"
+            enctype="multipart/form-data"
+            method="put">
+                <div>   
+                <label for="text-tshirt">Enter your text: </label><br>
+                <input type="text" id="text-tshirt">
+            </div>
+            <br>
+            <p>Choose Color: </p>
+            <div>
+             <input type="color" name="color" id="colorpicker" value="##ffffff">
+            </div>
+            <br>
+            <p>Select your size:</p>
+            <select required id="size"  name="size" aria-label="Default select example">
+            <option selected>Select Size</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+            </select>
+            <br><br>
+            <p>Choose Quantity:</p>
+            <select required id="qty" name="qty" aria-label="Default select example">
+                    <option selected>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            <br>
+            <br>
+            <section>
+                <label for="date">Select delivery date:</label>
+                <input type="date" id="date" name="date" value="2022-08-01" min="2022-08-08" max="2022-12-31" required>
+            </section>
+            <br> 
+            <hr>   
+            <p>Apply Code:</p>
+            <input type="text" id="text" name="discount">
+            <input type="submit" value="Submit">
+            <br>
+            <p>Order Value: $29.99</p>
+            <p>Taxes & charges: $3.5</p>
+            <p>Code NEW50: -$5</p>
+            <p>Grand Total: $28.5</p>
+            <br>
+            <p>We accept: </p>
+            <div>
+                <select aria-label="Default select example">
+                <option selected name="payment">Payment method</option>
+                <option value="1">Cash on delivery</option>
+                <option value="2">MasterCard</option>
+                <option value="3">VISA</option>
+                <option value="4">RuPay</option>
+                <option value="5">EMI</option>
+                <option value="6">UPI</option>
+                </select>
+            </div><br><br>
+            <hr>
+            <br>
+                <fieldset id="personalia">
+                    <legend>Personalia:</legend>
+                    <label for="fname">First Name: </label>
+                    <input required type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last Name: </label>
+                    <input required type="text" id="lname" name="lname"><br><br>
+                    <label for="address">Address: </label><br><br>
+                    <textarea name="address" id="address" cols="20" rows="3" maxlength="200" placeholder="Enter your address here"></textarea><br><br>
+                    <label for="Contact No">Contact No: </label>
+                    <input type="tel" name="contact" id="contact" maxlength="10" required><br><br>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+                </fieldset>
+                <br><br>
+                <button id="orderBtn" type="submit">Place Order</button>
+        </form>
+        <img src="Images/Image.jpeg"
+        width="300">
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous">
+</script>
+  <script>
+    function validateForm()
+    {
+        const values = [
+            document.forms["myForm"]["color"].value,
+            document.forms["myForm"]["size"].value,
+            document.forms["myForm"]["qty"].value,
+            document.forms["myForm"]["date"].value,
+            document.forms["myForm"]["payment"].value,
+            document.forms["myForm"]["fname"].value,
+            document.forms["myForm"]["lname"].value,
+            document.forms["myForm"]["address"].value,
+            document.forms["myForm"]["contact"].value,
+            document.forms["myForm"]["email"].value,
+        ];
+        const hasEmptyFields = Object.values(values).some(
+                (element) => element === ""
+            );
+            if (hasEmptyFields) {
+                alert("Please fill in all fields");
+                return;
+            }
+            if (values[8].length !== 10) {
+                alert("Please enter a valid mobile number");
+                return;
+            }
+            const validateEmail = (email) => {
+                return String(email)
+                    .toLowerCase()
+                    .match(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    );
+            };
+            if (!validateEmail(values[9])) {
+                alert(values[9] + " is not valid :(");
+                return;
+            }
+            const receipt_formatted = `Thank you for shopping!
+Here's your receipt:
+Date: ${new Date().toLocaleDateString("UK")}
+Color: ${values[0]}
+Size: ${values[1]}
+Quantity: ${values[2]}
+Date: ${values[3]}
+Payment Method: ${values[4]}
+First Name: ${values[5]}
+Last Name: ${values[6]}
+Address: ${values[7]}
+Contact: ${values[8]}
+Email: ${values[9]}`;
+          alert(receipt_formatted);
+     }
+        const form = document.getElementById("shirt_cart");
+        form.addEventListener("submit", (event) => {
+            // stop form submission
+            event.preventDefault();
+        });
+  </script>
+</html>
